@@ -1,0 +1,88 @@
+.bg {
+
+  background: linear-gradient(to bottom, #1e5799 -75%, rgba(0, 29, 60, 0) 75%);
+  width: 100%;
+  height: 20%;
+
+  position: absolute;
+}
+
+.content {
+  color: #fff;
+  position: absolute;
+  top: 280%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  height:100%;
+  width:100%;
+}
+
+#c {
+  position: absolute;
+width:100%;
+height:100%;
+  opacity: 0.2;
+  pointer-events: none;
+
+}
+
+.btn-outline {
+  color: #fff;
+  border: 2px solid #fff;
+  font-family: "Exo", serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  cursor: pointer;
+}
+.btn-outline span {
+  position: relative;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+
+
+.edgy-link {
+  position: relative;
+}
+.edgy-link span {
+  position: relative;
+  z-index: 999;
+}
+.edgy-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  transition: all 0.55s ease;
+}
+.edgy-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+}
+.edgy-link:hover span {
+  color: #001d3c;
+}
+.edgy-link:hover::after {
+  width: 100%;
+  transition: all 0.35s ease;
+}
+.edgy-link:hover::before {
+  width: 100%;
+  transition: all 0.55s ease;
+}
+
