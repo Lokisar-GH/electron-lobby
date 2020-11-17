@@ -64,7 +64,7 @@
 		
 		<div class="lobbyContainer" id="lobbyContainer">
 			<div class="lobbyContent" id="lobbyContent"><h1 style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">Lobby</h1>
-				<div id="hostGem" class="hostGem" onclick="hostGem()"><span style="font-size:1.2vh; pointer-events: none; position:relative; top:13%; left:10%;">Operation</span><span style="font-size:2.2vh; pointer-events: none; position:relative; top:11%; left:10%;"> Manuscript</span>
+				<div id="hostGem" class="hostGem" onclick="chatSubmit(true,'sysctl gem host --coop')"><span style="font-size:1.2vh; pointer-events: none; position:relative; top:13%; left:10%;">Operation</span><span style="font-size:2.2vh; pointer-events: none; position:relative; top:11%; left:10%;"> Manuscript</span>
 				</div>
 				<p style="color: white; font-family: JuneBug3; position: relative; top: -6%;">What's happening around the galaxy</p>
 				
@@ -76,7 +76,8 @@
 			<!--pregame panel-->
 			<div class="lobbyContent" id="prebattle" style="visibility: hidden;">
 				<h1 id="pregameTitle" style="position: absolute; color: white; top: 0%; left: 9%; font-family: JuneBug2;">❱ Test Room</h1>
-				<div id="exitGem" class="exitGem" onclick="exitGem(159)" ><span style="font-size:3.2vh; pointer-events: none; position:relative; top:29%; left:30%;">LEAVE</span>
+
+				<div id="exitGem" class="exitGem" onclick="exitGem(159)"><span style="font-size:1.2vh; pointer-events: none; position:relative; top:13%; left:10%;">Operation</span><span style="font-size:2.2vh; pointer-events: none; position:relative; top:11%; left:10%;"> Concluded</span>
 				</div>
 				<p id="hostSays" style="color: white; font-family: JuneBug3; position: relative; top: -6%;">afk 3sec for dinnar</p>
             </div>

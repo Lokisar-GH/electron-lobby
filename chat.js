@@ -6,7 +6,7 @@ function msgPut(Q){
 	document.getElementById("chatUserContent"+Q[2]).innerHTML +="<p style=\"display:inline-block; color: white; font-family: JuneBug2; background-color: rgba(100, 100, 100, 0.5);\">"+Q[0]+">>></p> <p style=\"display:inline-block; color: white; font-family: JuneBug; \">"+ Q[1]+"</p></br>";
 }
 
-function chatSubmit(isBattleChat=false) {
+function chatSubmit(isBattleChat=false,activePass="STDIO") {
 	if (isBattleChat==false)
 	{
 		msgQueue[0]=window.username;
@@ -15,9 +15,9 @@ function chatSubmit(isBattleChat=false) {
 		window.client.say(displayedChat,msgQueue[1])}
 	else{
 		msgQueue[0]=window.username;
-		msgQueue[1] = document.getElementById("name"+displayedChat).value;
-		console.log("battle chat fired!");
-		window.client.sayBattle(msgQueue[1])
+		msgQueue[1] = activePass;
+		console.log("battle chat fired! Submitting cmd "+activePass);
+		window.client.say('bus',msgQueue[1])
 	
 	}
 }
@@ -70,7 +70,7 @@ function chatPut(Name, Desc="Intergalactic Quantum Com", isBattleChat=false) {  
 	
 		document.getElementById("chatContainer").innerHTML +=" <div class=\"chatContent\" id=\"chat"+displayedChat+"\"><h1 style=\"position: absolute; color: white; top: 0%; left: 9%;font-family: JuneBug2;\">"+displayedChat+"</h1><p style=\"color: white; font-family: JuneBug3;\">"+Desc+"</p><div class=\"form__group field\" style=\"bottom:1%; width:100%; position:absolute;left:2%;\"><input onchange=\"chatSubmit()\" type=\"input\" class=\"form__field\" placeholder=\""+window.username+"\" name=\"name\" id=\'name"+displayedChat+"\' required /><label for=\"name"+displayedChat+"\" class=\"form__label\" id=\"formLabel\">"+window.username+"</label></div><div class=\"limitingframe\" style=\"width:107% ;height:78%;top:2%; overflow:scroll; overflow-x: hidden; position:relative;\"><div class=\"chatUserContent\" id=\"chatUserContent"+displayedChat+"\" style =\"bottom: 3%;position: relative; overflow: hidden;\"><!--chat content to be inserted--></div></div></div>";
 }
-	else{
+/*	else{
 		console.log("adding battleChat"+Name);
 
 			if (displayedChat!="disposed"){
@@ -87,7 +87,7 @@ function chatPut(Name, Desc="Intergalactic Quantum Com", isBattleChat=false) {  
 	
 		document.getElementById("chatContainer").innerHTML +=" <div class=\"chatContent\" id=\"chat"+displayedChat+"\"><h1 style=\"position: absolute; color: white; top: 0%; left: 9%;font-family: JuneBug2;\">"+document.getElementById("title"+Name).innerHTML+"</h1><p style=\"color: white; font-family: JuneBug3;\">"+Desc+"</p><div class=\"form__group field\" style=\"bottom:1%; width:100%; position:absolute;left:2%;\"><input onchange=\"chatSubmit(true)\" type=\"input\" class=\"form__field\" placeholder=\""+window.username+"\" name=\"name\" id=\'name"+displayedChat+"\' required /><label for=\"name"+displayedChat+"\" class=\"form__label\" id=\"formLabel\">"+window.username+"</label></div><div class=\"limitingframe\" style=\"width:107% ;height:78%;top:2%; overflow:scroll; overflow-x: hidden; position:relative;\"><div class=\"chatUserContent\" id=\"chatUserContent"+displayedChat+"\" style =\"bottom: 3%;position: relative; overflow: hidden;\"><!--chat content to be inserted--></div></div></div>";
 	
-}
+}*/
 
 
 
