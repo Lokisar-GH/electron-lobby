@@ -1,25 +1,25 @@
 var displayedChat="main";
-var msgQueue=["User","0000"];
+var msgQueue=["0000"];
 function msgPut(Q){
 	 //if(username == Q[0]) {  } 
 	 console.log("trying to put msg!")
 	document.getElementById("chatUserContent"+Q[2]).innerHTML +="<p style=\"display:inline-block; color: white; font-family: JuneBug2; background-color: rgba(100, 100, 100, 0.5);\">"+Q[0]+">>></p> <p style=\"display:inline-block; color: white; font-family: JuneBug; \">"+ Q[1]+"</p></br>";
 }
 
-function chatSubmit(isBattleChat=false,activePass="STDIO") {
-	if (isBattleChat==false)
-	{
-		msgQueue[0]=window.username;
-		msgQueue[1] = document.getElementById("name"+displayedChat).value;
+function chatSubmit(activePass="STDIO") {
+		msgQueue[0] = document.getElementById("name"+displayedChat).value;
 		console.log("normal chat fired!");
-		window.client.say(displayedChat,msgQueue[1])}
-	else{
-		msgQueue[0]=window.username;
-		msgQueue[1] = activePass;
-		console.log("battle chat fired! Submitting cmd "+activePass);
-		window.client.say('bus',msgQueue[1])
-	
-	}
+		window.client.say(displayedChat,msgQueue[0])
+
+}
+
+function chatProposeBtl(isBattleChat=false,activePass="STDIO") {
+
+			msgQueue[0] = document.getElementById("grabberValue").value
+			console.log("battle chat fired! Submitting cmd "+activePass);
+			window.client.say('bus',"sysctl gem host --title "+msgQueue[0])
+			
+		
 }
 
 function chatDel(Name) {   
